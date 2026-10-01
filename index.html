@@ -34,20 +34,20 @@
 <meta property="og:site_name" content="webtools-labs">
 <meta property="og:title" content="フリマ手数料計算・比較ツール | メルカリ・ラクマ・ヤフフリ(Yahoo!フリマ)">
 <meta property="og:description" content="メルカリ・ラクマ・Yahoo!フリマ（ヤフフリ、旧PayPayフリマ／ペイフリ）の販売手数料と振込手数料を一度に計算・比較。出品価格を入れるだけで、どのアプリが一番手取りが多いか分かります。">
-<meta property="og:url" content="https://webtools-labs.com/furima-hikaku-keisan/">
-<meta property="og:image" content="https://webtools-labs.com/furima-hikaku-keisan/og-image.png">
+<meta property="og:url" content="https://webtools-labs.com/frima-tesuryo-hikaku/">
+<meta property="og:image" content="https://webtools-labs.com/frima-tesuryo-hikaku/og-image.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="フリマ手数料計算・比較ツール">
 <meta name="twitter:description" content="メルカリ・ラクマ・ヤフフリ（Yahoo!フリマ／旧PayPayフリマ）の手取りを一度に比較できる無料ツール。">
-<meta name="twitter:image" content="https://webtools-labs.com/furima-hikaku-keisan/og-image.png">
+<meta name="twitter:image" content="https://webtools-labs.com/frima-tesuryo-hikaku/og-image.png">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "フリマ手数料計算・比較ツール",
-  "url": "https://webtools-labs.com/furima-hikaku-keisan/",
+  "url": "https://webtools-labs.com/frima-tesuryo-hikaku/",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Any",
   "description": "メルカリ・ラクマ・Yahoo!フリマ（ヤフフリ、旧PayPayフリマ／ペイフリ）の販売手数料と振込手数料を一度に計算・比較できる無料ツール。",
@@ -157,6 +157,15 @@ tr.best td:first-child { font-weight: 700; }
 .ref-table table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 460px; }
 .ref-table th, .ref-table td { padding: 0.55rem 0.5rem; border-bottom: 1px solid var(--line); text-align: left; }
 .ref-table td.num { font-variant-numeric: tabular-nums; text-align: right; }
+
+.related-tools { border: 1px solid var(--line); border-radius: 10px; padding: 1.3rem 1.4rem; margin: 2.5rem 0; }
+.related-tools h2 { margin: 0 0 0.9rem; }
+.related-tools ul { list-style: none; margin: 0; padding: 0; }
+.related-tools li { padding: 0.7rem 0; border-top: 1px solid var(--line); }
+.related-tools li:first-child { border-top: none; }
+.related-tools a { color: var(--accent); font-weight: 700; text-decoration: none; }
+.related-tools a:hover { text-decoration: underline; }
+.related-tools li p { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.85rem; }
 
 .disclaimer { font-size: 0.78rem; color: var(--muted); margin-top: 1rem; }
 
@@ -357,6 +366,24 @@ footer.site-footer p { margin: 0 0 0.5rem; }
     </div>
   </div>
 
+  <section class="related-tools">
+    <h2>フリマで使えるその他のツール</h2>
+    <ul>
+      <li>
+        <a href="https://webtools-labs.com/frima-hasso-hikaku/">フリマ配送方法・送料比較ツール</a>
+        <p>ネコポス・ゆうパケット・宅急便など、サイズと重さから一番安い発送方法がすぐ分かります。</p>
+      </li>
+      <li>
+        <a href="https://webtools-labs.com/frima-tedori-simulator/">フリマ手取りシミュレーター</a>
+        <p>手数料と送料をまとめて計算。目標の手取り額から出品価格を逆算することもできます。</p>
+      </li>
+      <li>
+        <a href="https://webtools-labs.com/frima-kakuteishinkoku-checker/">フリマの確定申告 要否チェッカー</a>
+        <p>メルカリ・ラクマの売上について、確定申告が必要かどうかを質問に答えるだけで判定できます。</p>
+      </li>
+    </ul>
+  </section>
+
   <section>
     <h2>よくある質問</h2>
     <details class="faq-item">
@@ -493,7 +520,7 @@ footer.site-footer p { margin: 0 0 0.5rem; }
     var shareText = price.toLocaleString('ja-JP') + '円の商品、手数料を引いた手取りを比較したら\n' +
       '一番お得だったのは' + bestRow.name + 'で ' + yen(bestRow.net) + '\n\n' +
       'フリマ手数料計算・比較ツール';
-    setShareLinks(shareText, 'https://webtools-labs.com/furima-hikaku-keisan/');
+    setShareLinks(shareText, 'https://webtools-labs.com/frima-tesuryo-hikaku/');
   }
 
   priceInput.addEventListener('input', render);
