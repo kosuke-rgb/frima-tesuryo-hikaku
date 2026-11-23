@@ -262,6 +262,17 @@ footer.site-footer p { margin: 0 0 0.5rem; }
   .ref-table th:first-child, .ref-table td:first-child { min-width: 5em; position: sticky; left: 0; z-index: 1; background: var(--bg); box-shadow: 1px 0 0 var(--line); }
   .ref-table tr.best td:first-child, .ref-table tr.total td:first-child, .ref-table tr.next td:first-child, .ref-table tr.highlight td:first-child { background: var(--best-bg, var(--bg)); }
 }
+/* スマホでは横長の早見表をカード表示に（2026-11-23） */
+@media (max-width: 600px) {
+  .ref-table table.stack, .ref-table table.stack tbody, .ref-table table.stack tr, .ref-table table.stack td { display: block; width: auto; }
+  .ref-table table.stack thead { display: none; }
+  .ref-table table.stack tr { border: 1px solid var(--line); border-radius: 8px; margin: 0 0 0.6rem; padding: 0.35rem 0.7rem; }
+  .ref-table table.stack td { display: flex; justify-content: space-between; align-items: baseline; gap: 0.8rem; border: 0; padding: 0.22rem 0; text-align: right; position: static; box-shadow: none; min-width: 0; background: none; font-size: 0.86rem; white-space: normal; }
+  .ref-table table.stack td > span { text-align: right; white-space: nowrap; }
+  .ref-table table.stack td::before { content: attr(data-label); color: var(--muted); text-align: left; font-weight: 400; flex: 1 1 auto; }
+  .ref-table table.stack td:first-child { display: block; text-align: left; font-weight: 700; border-bottom: 1px solid var(--line); padding-bottom: 0.35rem; margin-bottom: 0.2rem; }
+  .ref-table table.stack td:first-child::before { content: none; }
+}
 </style>
 </head>
 <body>
@@ -380,14 +391,14 @@ footer.site-footer p { margin: 0 0 0.5rem; }
     <h2>販売価格別 手数料の早見表</h2>
     <p>販売価格ごとに、各フリマアプリでかかる販売手数料と、手数料を引いた後の金額（送料別）を比べました。</p>
     <div class="ref-table" style="overflow-x:auto">
-      <table style="white-space:nowrap">
+      <table class="stack" style="white-space:nowrap">
         <thead><tr><th>販売価格</th><th class="num">メルカリ（10%）</th><th class="num">ラクマ（10%〜4.5%）</th><th class="num">Yahoo!フリマ（5%）</th></tr></thead>
         <tbody>
-          <tr><td>1,000円</td><td class="num">手数料100円<br>残り900円</td><td class="num">100円〜45円<br>900円〜955円</td><td class="num">手数料50円<br>残り950円</td></tr>
-          <tr><td>3,000円</td><td class="num">300円<br>2,700円</td><td class="num">300円〜135円<br>2,700円〜2,865円</td><td class="num">150円<br>2,850円</td></tr>
-          <tr><td>5,000円</td><td class="num">500円<br>4,500円</td><td class="num">500円〜225円<br>4,500円〜4,775円</td><td class="num">250円<br>4,750円</td></tr>
-          <tr><td>10,000円</td><td class="num">1,000円<br>9,000円</td><td class="num">1,000円〜450円<br>9,000円〜9,550円</td><td class="num">500円<br>9,500円</td></tr>
-          <tr><td>30,000円</td><td class="num">3,000円<br>27,000円</td><td class="num">3,000円〜1,350円<br>27,000円〜28,650円</td><td class="num">1,500円<br>28,500円</td></tr>
+          <tr><td data-label="販売価格">1,000円</td><td class="num" data-label="メルカリ（10%）"><span>手数料100円<br>残り900円</span></td><td class="num" data-label="ラクマ（10%〜4.5%）"><span>100円〜45円<br>900円〜955円</span></td><td class="num" data-label="Yahoo!フリマ（5%）"><span>手数料50円<br>残り950円</span></td></tr>
+          <tr><td data-label="販売価格">3,000円</td><td class="num" data-label="メルカリ（10%）"><span>300円<br>2,700円</span></td><td class="num" data-label="ラクマ（10%〜4.5%）"><span>300円〜135円<br>2,700円〜2,865円</span></td><td class="num" data-label="Yahoo!フリマ（5%）"><span>150円<br>2,850円</span></td></tr>
+          <tr><td data-label="販売価格">5,000円</td><td class="num" data-label="メルカリ（10%）"><span>500円<br>4,500円</span></td><td class="num" data-label="ラクマ（10%〜4.5%）"><span>500円〜225円<br>4,500円〜4,775円</span></td><td class="num" data-label="Yahoo!フリマ（5%）"><span>250円<br>4,750円</span></td></tr>
+          <tr><td data-label="販売価格">10,000円</td><td class="num" data-label="メルカリ（10%）"><span>1,000円<br>9,000円</span></td><td class="num" data-label="ラクマ（10%〜4.5%）"><span>1,000円〜450円<br>9,000円〜9,550円</span></td><td class="num" data-label="Yahoo!フリマ（5%）"><span>500円<br>9,500円</span></td></tr>
+          <tr><td data-label="販売価格">30,000円</td><td class="num" data-label="メルカリ（10%）"><span>3,000円<br>27,000円</span></td><td class="num" data-label="ラクマ（10%〜4.5%）"><span>3,000円〜1,350円<br>27,000円〜28,650円</span></td><td class="num" data-label="Yahoo!フリマ（5%）"><span>1,500円<br>28,500円</span></td></tr>
         </tbody>
       </table>
     </div>
